@@ -19,7 +19,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: python3 fetch_test.py
+      - name: Install sing-box (real traffic tester)
+        run: |
+          TAG=$(curl -s --max-time 30 https://api.github.com/repos/SagerNet/sing-box/releases/latest | python3 -c "import json,sys;print(json.load(sys.stdin)['tag_name'])")
+          echo "sing-box $TAG"
+          curl -sL --max-time 120 -o sb.tgz "https://github.com/SagerNet/sing-box/releases/download/${TAG}/sing-box-${TAG#v}-linux-amd64.tar.gz"
+          tar xzf sb.tgz && mv sing-box-*/sing-box ./sing-box && chmod +x sing-box && ./sing-box version
+      - run: SINGBOX=./sing-box python3 fetch_test.py
       - run: |
           git config user.name "ss44-bot"
           git config user.email "ss44-bot@users.noreply.github.com"

@@ -22,7 +22,7 @@
 
 | 📱 برنامه | 📦 فرمت | 🔗 لینک سابسکریپشن |
 |---|---|---|
-| v2rayNG / Hiddify / NekoBox | 🥇 **GOLD — هندشیک TLS تأییدشده (اول اینو امتحان کن)** | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44-gold.txt` |
+| v2rayNG / Hiddify / NekoBox | 🥇 **GOLD — ترافیک واقعی اینترنتی از داخل تونل رد شده (اول اینو امتحان کن)** | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44-gold.txt` |
 | v2rayNG / Hiddify / NekoBox | معمولی (GOLD + SILVER) | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44.txt` |
 | v2rayNG / Shadowrocket | base64 | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44-base64.txt` |
 | Clash / ClashMeta / NekoBox | clash | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44-clash.yaml` |

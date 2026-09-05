@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-# SS44 v3 — 3-round verification for Iran
-# Round1: DNS+TCP | Round2: real TLS handshake with config SNI (+expired-cert filter)
-# Round3: Iran SNI scoring (non-Google first) | + Hysteria2/TUIC UDP collection
-# Outputs: SS44-gold.txt (TLS-verified) / SS44.txt (all) / SS44-udp.txt / clash / stats
+# SS44 v4 — REAL traffic verification with sing-box
+# Round1: DNS+TCP (prefilter) | Round2: real HTTP via proxy (generate_204 must come back)
+# GOLD = ترافیک واقعی رد کرده | همه پورت‌ها و همه پروتکل‌ها (بدون تبعیض 443)
 
 import re, socket, ssl, time, base64, json, ipaddress, urllib.request, urllib.parse
-import concurrent.futures
+import concurrent.futures, subprocess, tempfile, os, queue
 from datetime import datetime, timezone
 
 SOURCES = [
@@ -21,15 +20,17 @@ SOURCES = [
 ]
 
 REPO_URL = "https://github.com/ZendanTeam/SS44-sub"
-MAX_TEST = 500
-MAX_TLS_PROBE = 250
+MAX_TEST = 450          # سقف تست TCP
+MAX_TRAFFIC = 320       # سقف تست ترافیک واقعی
 TIMEOUT = 4
-TLS_TIMEOUT = 6
 THREADS = 50
-TOP_N = 120
+TRAFFIC_WORKERS = 25
+TRAFFIC_TIMEOUT = 10    # تایماوت هر تست ترافیک
+TEST_URLS = ["https://cp.cloudflare.com/generate_204",
+             "https://www.gstatic.com/generate_204"]
+SINGBOX = os.environ.get("SINGBOX", "./sing-box")
 
 LINK_RE = re.compile(r'^(vless|vmess|trojan|ss|hy2|hysteria2|tuic)://\S+', re.I)
-UDP_SCHEMES = {"hy2", "hysteria2", "tuic"}
 
 
 def extract_links(text):
@@ -51,7 +52,7 @@ def fetch_all():
     all_links = []
     for url in SOURCES:
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "SS44/3.0"})
+            req = urllib.request.Request(url, headers={"User-Agent": "SS44/4.0"})
             data = urllib.request.urlopen(req, timeout=20).read().decode("utf-8", "ignore")
             lines = extract_links(data)
             print(f"OK .../{url.rsplit('/',1)[1]} -> {len(lines)}")
@@ -77,8 +78,7 @@ def port_digits(s):
 
 def parse_host_port(link):
     try:
-        low = link.lower()
-        scheme = low.split("://", 1)[0]
+        scheme = link.lower().split("://", 1)[0]
         if scheme == "vmess":
             d = decode_vmess(link)
             if not d:
@@ -94,7 +94,7 @@ def parse_host_port(link):
             except Exception:
                 return None
             host, port = hp.rsplit(":", 1)[0].strip("[]"), int(port_digits(hp.rsplit(":", 1)[1]))
-        else:  # vless / trojan / hy2 / hysteria2 / tuic
+        else:
             body = link.split("://", 1)[1]
             hp = body.split("@", 1)[1] if "@" in body else body
             hp = re.split(r'[/?#]', hp, maxsplit=1)[0]
@@ -139,53 +139,6 @@ def q(p, k, d=""):
     return urllib.parse.unquote(v[0] if isinstance(v, list) else v)
 
 
-def needs_tls(link):
-    low = link.lower()
-    scheme = low.split("://", 1)[0]
-    if scheme == "vmess":
-        d = decode_vmess(link)
-        return bool(d) and str(d.get("tls", "")).lower() == "tls"
-    p = query_of(link)
-    return q(p, "security", "").lower() in ("tls", "reality")
-
-
-def get_sni(link, host):
-    scheme = link.lower().split("://", 1)[0]
-    if scheme == "vmess":
-        d = decode_vmess(link) or {}
-        return str(d.get("sni") or d.get("host") or host)
-    p = query_of(link)
-    return q(p, "sni") or q(p, "serverName") or q(p, "peer") or q(p, "host") or host
-
-
-# SNI هایی که تو ایران اختلال دارن (گوگل و...) آخر صف؛ مایکروسافت/اپل/آمازون اول
-BAD_SNI = ("google", "gstatic", "youtube", "gmail", "blogger", "googlevideo")
-GOOD_SNI = ("microsoft", "apple", "amazon", "cloudflare", "azure", "yahoo")
-
-
-def sni_adjust(link):
-    sni = get_sni(link, "").lower()
-    if any(b in sni for b in BAD_SNI):
-        return 4
-    if any(g in sni for g in GOOD_SNI):
-        return -2
-    return 0
-
-
-def score(link):
-    ll = link.lower()
-    s = sni_adjust(link)
-    if "reality" in ll:
-        s -= 10
-    if ":443" in ll:
-        s -= 5
-    if "security=tls" in ll:
-        s -= 2
-    if "flow=xtls" in ll:
-        s -= 1
-    return s
-
-
 def tcp_ping(link):
     hp = parse_host_port(link)
     if hp is None:
@@ -198,52 +151,175 @@ def tcp_ping(link):
         return (link, False, 9999)
 
 
-def dns_ok(link):
-    hp = parse_host_port(link)
-    if hp is None:
-        return False
-    try:
-        socket.getaddrinfo(hp[0], hp[1], timeout=TIMEOUT)
-        return True
-    except Exception:
-        try:
-            socket.getaddrinfo(hp[0], hp[1])
-            return True
-        except Exception:
-            return False
-
-
-def tls_probe(host, port, sni):
-    """هندشیک واقعی TLS با SNI کانفیگ — سرتیفیکیت منقضی = مرده"""
-    try:
-        ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE
-        ctx.set_ciphers("DEFAULT")
-        t0 = time.time()
-        with socket.create_connection((host, port), timeout=TLS_TIMEOUT) as raw:
-            with ctx.wrap_socket(raw, server_hostname=sni or host) as tls:
-                cert = tls.getpeercert()
-                ms = (time.time() - t0) * 1000
-                info = {"ms": ms, "version": tls.version() or "?", "cipher": (tls.cipher() or ["?"])[0]}
-                if cert and "notAfter" in cert:
-                    try:
-                        exp = datetime.strptime(cert["notAfter"], "%b %d %H:%M:%S %Y %Z").replace(tzinfo=timezone.utc)
-                        if exp < datetime.now(timezone.utc):
-                            return None  # منقضی
-                        info["exp"] = exp.strftime("%Y-%m-%d")
-                    except Exception:
-                        pass
-                return info
-    except Exception:
-        return None
-
-
 def rename(link, idx, prefix="SS44"):
     return link.split("#", 1)[0] + f"#{prefix}-{idx:03d}"
 
 
-# ---------- clash converter ----------
+# ================= sing-box outbound converters =================
+def fp_map(fp):
+    fp = (fp or "").lower()
+    return fp if fp in ("chrome", "firefox", "safari", "ios", "android", "edge", "360", "qq") else "chrome"
+
+
+def tls_block(p, host, Reality=False):
+    sni = q(p, "sni") or q(p, "serverName") or q(p, "peer") or host
+    t = {"enabled": True, "server_name": sni}
+    if q(p, "fp"):
+        t["utls"] = {"enabled": True, "fingerprint": fp_map(q(p, "fp"))}
+    if Reality or q(p, "security", "").lower() == "reality":
+        t["reality"] = {"enabled": True, "public_key": q(p, "pbk"), "short_id": q(p, "sid", "")}
+    return t
+
+
+def transport_block(p):
+    net = q(p, "type", "tcp").lower()
+    if net == "ws":
+        return {"type": "ws", "path": q(p, "path", "/") or "/",
+                "headers": {"Host": q(p, "host", "") or q(p, "sni", "")}}
+    if net == "grpc":
+        return {"type": "grpc", "service_name": q(p, "serviceName", "") or q(p, "service_name", "")}
+    return None
+
+
+def to_outbound(link):
+    """URI -> sing-box outbound dict (یا None اگه پشتیبانی نشه)"""
+    scheme = link.lower().split("://", 1)[0]
+    if scheme == "vmess":
+        d = decode_vmess(link)
+        if not d:
+            return None
+        ob = {"type": "vmess", "server": str(d.get("add", "")), "server_port": int(str(d.get("port", 0))),
+              "uuid": str(d.get("id", "")), "security": str(d.get("scy", "auto") or "auto"),
+              "alter_id": int(str(d.get("aid", 0)))}
+        net = str(d.get("net", "tcp") or "tcp").lower()
+        if str(d.get("tls", "")).lower() == "tls":
+            t = {"enabled": True, "server_name": str(d.get("sni") or d.get("host") or d.get("add", ""))}
+            if d.get("fp"):
+                t["utls"] = {"enabled": True, "fingerprint": fp_map(str(d.get("fp")))}
+            ob["tls"] = t
+        if net == "ws":
+            ob["transport"] = {"type": "ws", "path": str(d.get("path", "/") or "/"),
+                               "headers": {"Host": str(d.get("host", "") or "")}}
+        elif net == "grpc":
+            ob["transport"] = {"type": "grpc", "service_name": str(d.get("path", "") or "")}
+        return ob
+    if scheme == "vless":
+        u = urllib.parse.urlsplit(link)
+        p = urllib.parse.parse_qs(u.query)
+        ob = {"type": "vless", "server": u.hostname, "server_port": u.port,
+              "uuid": urllib.parse.unquote(u.username or "")}
+        if q(p, "flow"):
+            ob["flow"] = q(p, "flow")
+        if q(p, "security", "none").lower() in ("tls", "reality"):
+            ob["tls"] = tls_block(p, u.hostname)
+        tr = transport_block(p)
+        if tr:
+            ob["transport"] = tr
+        return ob
+    if scheme == "trojan":
+        u = urllib.parse.urlsplit(link)
+        p = urllib.parse.parse_qs(u.query)
+        ob = {"type": "trojan", "server": u.hostname, "server_port": u.port,
+              "password": urllib.parse.unquote(u.username or ""),
+              "tls": tls_block(p, u.hostname)}
+        tr = transport_block(p)
+        if tr:
+            ob["transport"] = tr
+        return ob
+    if scheme == "ss":
+        body = link.split("://", 1)[1].split("#")[0].split("?")[0].split("/")[0]
+        if "@" not in body:
+            body += "=" * (-len(body) % 4)
+            body = base64.b64decode(body).decode("utf-8", "ignore")
+        userinfo, hp = body.rsplit("@", 1)
+        if ":" not in userinfo:
+            userinfo += "=" * (-len(userinfo) % 4)
+            userinfo = base64.b64decode(userinfo).decode("utf-8", "ignore")
+        method, password = userinfo.split(":", 1)
+        host, port = hp.rsplit(":", 1)[0].strip("[]"), int(port_digits(hp.rsplit(":", 1)[1]))
+        return {"type": "shadowsocks", "server": host, "server_port": port,
+                "method": method, "password": password}
+    if scheme in ("hy2", "hysteria2"):
+        u = urllib.parse.urlsplit(link)
+        p = urllib.parse.parse_qs(u.query)
+        ob = {"type": "hysteria2", "server": u.hostname, "server_port": u.port,
+              "password": urllib.parse.unquote(u.username or "") or q(p, "auth", ""),
+              "tls": {"enabled": True, "server_name": q(p, "sni") or q(p, "peer") or u.hostname,
+                      "insecure": True}}
+        if q(p, "obfs") not in ("", "none") and q(p, "obfs-password"):
+            ob["obfs"] = {"type": "salamander", "password": q(p, "obfs-password")}
+        return ob
+    if scheme == "tuic":
+        u = urllib.parse.urlsplit(link)
+        p = urllib.parse.parse_qs(u.query)
+        user = urllib.parse.unquote(u.username or "")
+        pwd = urllib.parse.unquote(u.password or "")
+        return {"type": "tuic", "server": u.hostname, "server_port": u.port,
+                "uuid": user, "password": pwd or user,
+                "congestion_control": "bbr",
+                "tls": {"enabled": True, "server_name": q(p, "sni") or u.hostname, "insecure": True}}
+    return None
+
+
+PORTS = queue.Queue()
+for _port in range(22000, 22400):
+    PORTS.put(_port)
+
+
+def traffic_test(link):
+    """تست واقعی: رد کردن HTTP از داخل تونل — 204 برگشت = واقعاً سالمه. خروجی: (ok, ms)"""
+    ob = to_outbound(link)
+    if not ob:
+        return (False, 9999)
+    port = PORTS.get()
+    try:
+        cfg = {"log": {"level": "error"},
+               "inbounds": [{"type": "mixed", "tag": "in", "listen": "127.0.0.1", "listen_port": port}],
+               "outbounds": [dict(ob, tag="out"), {"type": "direct", "tag": "direct"}],
+               "route": {"final": "out"}}
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+            json.dump(cfg, f)
+            path = f.name
+        proc = subprocess.Popen([SINGBOX, "run", "-c", path],
+                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        try:
+            t0 = time.time()
+            for _ in range(30):  # صبر تا پورت بالا بیاد
+                try:
+                    socket.create_connection(("127.0.0.1", port), timeout=0.3).close()
+                    break
+                except Exception:
+                    time.sleep(0.15)
+            else:
+                return (False, 9999)
+            for url in TEST_URLS:
+                try:
+                    r = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code} %{time_total}",
+                                        "-x", f"http://127.0.0.1:{port}", "--max-time", str(TRAFFIC_TIMEOUT), url],
+                                       capture_output=True, text=True, timeout=TRAFFIC_TIMEOUT + 3)
+                    code, t = (r.stdout.strip().split() + ["0", "0"])[:2]
+                    if code in ("200", "204"):
+                        return (True, float(t) * 1000)
+                except Exception:
+                    continue
+            return (False, 9999)
+        finally:
+            proc.terminate()
+            try:
+                proc.wait(timeout=3)
+            except Exception:
+                proc.kill()
+            try:
+                os.unlink(path)
+            except Exception:
+                pass
+    except Exception:
+        return (False, 9999)
+    finally:
+        PORTS.put(port)
+
+
+# ---------- clash converter (for output file) ----------
 def to_clash(link, name):
     try:
         scheme = link.lower().split("://", 1)[0]
@@ -347,10 +423,6 @@ def clash_hy2(link, name):
              "skip-cert-verify": True, "udp": True}
     if q(p, "sni") or q(p, "peer"):
         proxy["sni"] = q(p, "sni", q(p, "peer"))
-    if q(p, "obfs") and q(p, "obfs") != "none":
-        proxy["obfs"] = q(p, "obfs")
-        if q(p, "obfs-password"):
-            proxy["obfs-password"] = q(p, "obfs-password")
     return proxy
 
 
@@ -368,7 +440,7 @@ def clash_tuic(link, name):
 
 
 def yaml_emit(proxies):
-    out = ["# SS44 clash subscription — auto-generated", "proxies:"]
+    out = ["# SS44 clash subscription — auto-generated (traffic-verified first)", "proxies:"]
     for pr in proxies:
         out.append(f"  - {{name: {pr['name']}, type: {pr['type']}, server: {pr['server']}, port: {pr['port']}}}")
         for k, v in pr.items():
@@ -379,93 +451,72 @@ def yaml_emit(proxies):
 
 
 def main():
+    import random
     t_start = time.time()
     raw = fetch_all()
-    print(f"RAW total: {len(raw)}")
+    print(f"RAW total: {len(raw)}", flush=True)
     uniq = dedupe(raw)
-    print(f"UNIQUE valid: {len(uniq)}")
+    print(f"UNIQUE valid: {len(uniq)}", flush=True)
 
-    tcp_links = [l for l in uniq if l.lower().split("://", 1)[0] not in UDP_SCHEMES]
-    udp_links = [l for l in uniq if l.lower().split("://", 1)[0] in UDP_SCHEMES]
-    print(f"TCP-family: {len(tcp_links)} | UDP-family (hy2/tuic): {len(udp_links)}")
-
-    tcp_links.sort(key=score)
-    candidates = tcp_links[:MAX_TEST]
-    print(f"Round1 TCP testing {len(candidates)} ...")
+    # قاطی کردن تا همه پورت‌ها/پروتکل‌ها شانس تست داشته باشن (بدون تبعیض 443)
+    random.seed(int(time.time()) // 1800)
+    random.shuffle(uniq)
+    candidates = uniq[:MAX_TEST]
+    print(f"Round1 TCP testing {len(candidates)} ...", flush=True)
     opened = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=THREADS) as ex:
         for link, good, ms in ex.map(tcp_ping, candidates):
             if good:
-                opened.append((ms, link))
-    opened.sort(key=lambda x: x[0])
-    print(f"Round1 OPEN: {len(opened)} / {len(candidates)}")
+                opened.append(link)
+    print(f"Round1 OPEN: {len(opened)} / {len(candidates)}", flush=True)
 
-    # Round2: TLS handshake واقعی فقط برای کانفیگ‌های tls/reality
-    tls_cands = [(ms, l) for ms, l in opened if needs_tls(l)][:MAX_TLS_PROBE]
-    print(f"Round2 TLS probing {len(tls_cands)} ...")
-
-    def probe(item):
-        ms, link = item
-        hp = parse_host_port(link)
-        info = tls_probe(hp[0], hp[1], get_sni(link, hp[0])) if hp else None
-        return (link, ms, info)
-
+    use_traffic = os.path.exists(SINGBOX) and os.access(SINGBOX, os.X_OK)
+    print(f"sing-box traffic test: {'ON' if use_traffic else 'OFF (fallback: TCP only)'}", flush=True)
     gold, silver = [], []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=30) as ex:
-        results = list(ex.map(probe, tls_cands))
-    tls_ok_hosts = set()
-    for link, ms, info in results:
-        if info:
-            gold.append((ms, link, info))
-            hp = parse_host_port(link)
-            if hp:
-                tls_ok_hosts.add(hp)
-    for ms, link in opened:
-        if not needs_tls(link):
-            silver.append((ms, link))  # بدون tls (مثل ss/shadowsocks) — هندشیک نداره
-        elif link not in [g[1] for g in gold]:
-            hp = parse_host_port(link)
-            if hp and hp in tls_ok_hosts:
-                silver.append((ms, link))  # هاست سالمه ولی این کانفیگ خاص نه
-    gold.sort(key=lambda x: x[0])
-    silver.sort(key=lambda x: x[0])
-    print(f"GOLD (TLS-verified): {len(gold)} | SILVER (TCP-open): {len(silver)}")
+    if use_traffic:
+        traffic_cands = opened[:MAX_TRAFFIC]
+        print(f"Round2 TRAFFIC testing {len(traffic_cands)} ...", flush=True)
+        with concurrent.futures.ThreadPoolExecutor(max_workers=TRAFFIC_WORKERS) as ex:
+            for link, (ok, ms) in zip(traffic_cands, ex.map(traffic_test, traffic_cands)):
+                (gold if ok else silver).append((ms if ok else 9999, link))
+        gold.sort(key=lambda x: x[0])
+        print(f"GOLD (real traffic OK): {len(gold)} / {len(traffic_cands)}", flush=True)
+        if gold:
+            ms_sorted = sorted(m for m, _ in gold)
+            print(f"  latency p50={ms_sorted[len(ms_sorted)//2]:.0f}ms", flush=True)
+    else:
+        silver = [(9999, l) for l in opened]
 
-    # UDP family: فقط DNS
-    udp_ok = [l for l in udp_links if dns_ok(l)]
-    print(f"UDP DNS-ok: {len(udp_ok)} / {len(udp_links)}")
+    # تنوع پروتکل: اول ۱۵۰ تای سریع‌تر، بعد اگه پروتکل سالمی جا مونده بود اضافه کن
+    final = sorted(gold, key=lambda x: x[0])[:150]
+    have = {l.split("://", 1)[0].lower() for _, l in final}
+    for _, link in sorted(gold, key=lambda x: x[0]):
+        proto = link.split("://", 1)[0].lower()
+        if proto not in have:
+            have.add(proto)
+            final.append((9999, link))
 
-    # خروجی‌ها
-    gold_links = [rename(l, i + 1) for i, (_, l, _) in enumerate(gold)]
-    silver_sorted = sorted(silver, key=lambda x: (score(x[1]), x[0]))
-    all_links = gold_links + [rename(l, i + 1 + len(gold_links)) for i, (_, l) in
-                              enumerate(silver_sorted)]
-    all_links = all_links[:150]  # سقف: گوشی کند نشه
-    udp_out = [rename(l, i + 1, prefix="SS44-U") for i, l in enumerate(udp_ok[:60])]
+    links = [rename(l, i + 1) for i, (_, l) in enumerate(final)]
+    udp_links = [l for _, l in final if l.split("://", 1)[0].lower() in ("hy2", "hysteria2", "tuic")]
+    udp_out = [rename(l, i + 1, prefix="SS44-U") for i, l in enumerate(udp_links[:60])]
 
-    title_b64 = base64.b64encode("🚀 SS44 GOLD | Iran Irancell".encode()).decode()
+    title_b64 = base64.b64encode("🚀 SS44 VERIFIED | Iran".encode()).decode()
     header = [f"#profile-title: base64:{title_b64}", "#profile-update-interval: 1",
               f"#support-url: {REPO_URL}", f"#profile-web-page-url: {REPO_URL}"]
     with open("SS44-gold.txt", "w", encoding="utf-8") as f:
-        f.write("\n".join(header + gold_links) + "\n")
+        f.write("\n".join(header + links) + "\n")
     with open("SS44.txt", "w", encoding="utf-8") as f:
-        f.write("\n".join(header + all_links) + "\n")
+        f.write("\n".join(header + links) + "\n")
     with open("SS44-base64.txt", "w") as f:
-        f.write(base64.b64encode("\n".join(all_links).encode()).decode())
+        f.write(base64.b64encode("\n".join(links).encode()).decode())
     with open("SS44-udp.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(udp_out) + ("\n" if udp_out else ""))
 
     clash_proxies, proto_count = [], {}
-    for i, l in enumerate(all_links, 1):
+    for i, l in enumerate(links, 1):
         scheme = l.split("://", 1)[0].lower()
         proto_count[scheme] = proto_count.get(scheme, 0) + 1
         cp = to_clash(l, f"SS44-{i:03d}")
-        if cp:
-            clash_proxies.append(cp)
-    for i, l in enumerate(udp_out, 1):
-        scheme = l.split("://", 1)[0].lower()
-        proto_count[scheme] = proto_count.get(scheme, 0) + 1
-        cp = to_clash(l, f"SS44-U{i:03d}")
         if cp:
             clash_proxies.append(cp)
     with open("SS44-clash.yaml", "w", encoding="utf-8") as f:
@@ -474,13 +525,14 @@ def main():
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     with open("STATS.md", "w", encoding="utf-8") as f:
         f.write(f"# 📊 SS44 Stats\n\n- Last update: **{now}**\n- Fetched: **{len(raw)}**\n"
-                f"- Unique valid: **{len(uniq)}**\n- Round1 TCP tested: **{len(candidates)}** → open **{len(opened)}**\n"
-                f"- Round2 TLS probed: **{len(tls_cands)}** → 🥇 GOLD **{len(gold)}**\n"
-                f"- Published: **{len(all_links)}** (+UDP **{len(udp_out)}**, clash **{len(clash_proxies)}**)\n\n"
+                f"- Unique valid: **{len(uniq)}**\n- Round1 TCP: **{len(candidates)}** → open **{len(opened)}**\n"
+                f"- Round2 TRAFFIC: **{min(len(opened), MAX_TRAFFIC)}** → 🥇 GOLD **{len(gold)}**\n"
+                f"- Published: **{len(links)}** (UDP extra **{len(udp_out)}**, clash **{len(clash_proxies)}**)\n\n"
                 f"| Protocol | Count |\n|---|---|\n")
         for k, v in sorted(proto_count.items()):
             f.write(f"| {k} | {v} |\n")
-    print(f"DONE in {time.time()-t_start:.0f}s — gold {len(gold)}, total {len(all_links)}, udp {len(udp_out)}, clash {len(clash_proxies)}")
+    print(f"DONE in {time.time()-t_start:.0f}s — gold {len(gold)}, published {len(links)}, clash {len(clash_proxies)}",
+          flush=True)
 
 
 if __name__ == "__main__":
