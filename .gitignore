@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+headers.txt
+user.json

@@ -1,0 +1,28 @@
+name: SS44 update
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # هر ۳۰ دقیقه
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["fetch_test.py", ".github/workflows/update.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python3 fetch_test.py
+      - run: |
+          git config user.name "ss44-bot"
+          git config user.email "ss44-bot@users.noreply.github.com"
+          git add SS44.txt SS44-base64.txt SS44-clash.yaml STATS.md
+          git diff --cached --quiet || git commit -m "update SS44 $(date -u +%Y-%m-%d_%H:%M)"
+          git push
