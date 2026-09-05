@@ -22,9 +22,11 @@
 
 | 📱 برنامه | 📦 فرمت | 🔗 لینک سابسکریپشن |
 |---|---|---|
-| v2rayNG / Hiddify / NekoBox | معمولی | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44.txt` |
+| v2rayNG / Hiddify / NekoBox | 🥇 **GOLD — هندشیک TLS تأییدشده (اول اینو امتحان کن)** | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44-gold.txt` |
+| v2rayNG / Hiddify / NekoBox | معمولی (GOLD + SILVER) | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44.txt` |
 | v2rayNG / Shadowrocket | base64 | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44-base64.txt` |
 | Clash / ClashMeta / NekoBox | clash | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44-clash.yaml` |
+| Hiddify / NekoBox (تست دستی) | 🌀 Hysteria2 / TUIC (پروتکل UDP — وقتی VLESS جواب نمیده) | `https://raw.githubusercontent.com/ZendanTeam/SS44-sub/main/SS44-udp.txt` |
 
 > لینک اول را در بخش **Subscription** برنامه بگذار و Update بزن. از این به بعد خودش همیشه تازه است.
 
@@ -39,6 +41,17 @@
 | 🏷️ اسم یکدست همه کانفیگ‌ها (SS44-xxx) | ✅ | ❌ |
 | 📊 آمار شفاف هر آپدیت ([STATS.md](STATS.md)) | ✅ | ❌ |
 | 🔄 آپدیت خودکار هر ۳۰ دقیقه | ✅ | ✅ |
+
+## 🩺 وصل نشد؟ اول این ۶ تا رو چک کن (۹۰٪ مشکل همین‌جاست)
+
+1. **ساعت گوشی** باید روی Automatic باشد — ساعت اشتباه = همه کانفیگ‌های TLS/Reality fail میشن!
+2. سابسکریپشن رو **Update** کن (کانفیگ دیشب امروز مرده) بعد `⋮ → Test all` بگیر
+3. **اول GOLD** (`SS44-gold.txt`) رو امتحان کن — اینا هندشیک واقعی TLS رو پاس کردن
+4. اگه VLESSها هیچ‌کدوم نخوردن، برو سراغ **`SS44-udp.txt`** (Hysteria2/TUIC با UDP کار می‌کنن و خیلی وقت‌ها وقتی TCP قفله رد میشن)
+5. Fragment رو یک بار روشن / یک بار خاموش تست کن (Settings → Fragment)
+6. یه بار **Hiddify** رو هم امتحان کن — گاهی همون کانفیگ تو یه اپ دیگه وصل میشه
+
+> اگه حتی GOLD هم نخورد، مشکل تقریباً قطعاً سمت گوشی/اپراتوره (نه کانفیگ) — خطای دقیق برنامه رو بفرست تا بگم چشه.
 
 ## 🇮🇷 تنظیم حیاتی ایرانسل (مهم!)
 

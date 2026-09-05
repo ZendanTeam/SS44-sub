@@ -23,6 +23,6 @@ jobs:
       - run: |
           git config user.name "ss44-bot"
           git config user.email "ss44-bot@users.noreply.github.com"
-          git add SS44.txt SS44-base64.txt SS44-clash.yaml STATS.md
+          git add SS44.txt SS44-gold.txt SS44-udp.txt SS44-base64.txt SS44-clash.yaml STATS.md
           git diff --cached --quiet || git commit -m "update SS44 $(date -u +%Y-%m-%d_%H:%M)"
           git push
