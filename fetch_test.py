@@ -268,7 +268,10 @@ for _port in range(22000, 22400):
 
 def traffic_test(link):
     """تست واقعی: رد کردن HTTP از داخل تونل — 204 برگشت = واقعاً سالمه. خروجی: (ok, ms)"""
-    ob = to_outbound(link)
+    try:
+        ob = to_outbound(link)
+    except Exception:
+        return (False, 9999)
     if not ob:
         return (False, 9999)
     port = PORTS.get()
