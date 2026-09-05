@@ -20,8 +20,8 @@ SOURCES = [
 ]
 
 REPO_URL = "https://github.com/ZendanTeam/SS44-sub"
-MAX_TEST = 450          # سقف تست TCP
-MAX_TRAFFIC = 320       # سقف تست ترافیک واقعی
+MAX_TEST = 900          # سقف تست TCP
+MAX_TRAFFIC = 600       # سقف تست ترافیک واقعی
 TIMEOUT = 4
 THREADS = 50
 TRAFFIC_WORKERS = 25
