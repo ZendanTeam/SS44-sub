@@ -1,2 +1,2 @@
-hysteria2://QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s@162.249.125.133:443?sni=hy2-new.aspidnet.xyz&obfs=salamander&obfs-password=c1b4086fea89914496c7e10967a419216566#SS44-U-001
-hy2://mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj@gta.internet-card.sbs:443/?insecure=1&sni=gta.internet-card.sbs#SS44-U-002
+hysteria2://suAmQS9LlInNq4Wumh-FUF4GGlpgmG_g@159.223.157.129:8443?insecure=1#SS44-U-001
+hysteria2://HowdyHysteria2023w0W@51.15.19.206:8443?insecure=1&obfs=salamander&obfs-password=HysteriaHowdy&sni=sni-here.com#SS44-U-002
