@@ -1,5 +1,2 @@
-hysteria2://d4a705d40356ef719212045528e04594@45.149.172.80:443/?insecure=1&obfs=salamander&obfs-password=5c8f1a3e7b2d9046c1f8a5e3b7d04f2a&sni=45.149.172.80#SS44-U-001
-hysteria2://f6bcf150bc912812b240caf89bc89264@45.149.172.74:443/?insecure=1&obfs=salamander&obfs-password=5c8f1a3e7b2d9046c1f8a5e3b7d04f2a&sni=45.149.172.74#SS44-U-002
-hysteria2://mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj@91.196.32.163:443?insecure=1&sni=germany3.h2corp.local#SS44-U-003
-hysteria2://c4d7e69958b226a426157a6e80eb9406@80.91.79.136:443/?insecure=1&obfs=salamander&obfs-password=5c8f1a3e7b2d9046c1f8a5e3b7d04f2a&sni=80.91.79.136#SS44-U-004
-hysteria2://cd74c0a406664a5bc0bac098220a2468@2.27.249.79:443?obfs=salamander&obfs-password=44f1c1e2f8b99e792ceed574627a1eb0&sni=nl1.sferavpn.pro&insecure=0#SS44-U-005
+hysteria2://YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc@admin.wwwinternetvideo.click:443?insecure=1&security=tls&sni=admin.wwwinternetvideo.click#SS44-U-001
+hysteria2://1851679956395a09f6afc10eb3f3751b@80.91.65.89:443/?insecure=1&obfs=salamander&obfs-password=5c8f1a3e7b2d9046c1f8a5e3b7d04f2a&sni=80.91.65.89#SS44-U-002
