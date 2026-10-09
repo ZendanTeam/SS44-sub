@@ -1,1 +1,0 @@
-hysteria2://mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj@91.196.32.163:443?insecure=1&sni=germany3.h2corp.local#SS44-U-001
