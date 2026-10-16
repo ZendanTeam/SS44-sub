@@ -1,6 +1,5 @@
 hy2://4291c983-c520-46ac-82cc-48f14bef573f@129.213.91.185:35013?insecure=1&sni=129.213.91.185#SS44-U-001
-hy2://e625f8ef-f935-4c7d-a259-0f154b6842fd@hy-se.bypassme.online:443?sni=hy-se.bypassme.online#SS44-U-002
-hy2://https%3A%2F%2Fxship.best@starlink-ft.251313.xyz:443?insecure=1&sni=xship.top#SS44-U-003
-hy2://9yOIR2_QAChKs26rYaiX_aoNnOALd0aU@fi1server.rabstvo.shop:443?sni=fi1server.rabstvo.shop#SS44-U-004
-hysteria2://mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj@64.188.98.171:443?insecure=1&sni=germany3.h2corp.local#SS44-U-005
-hy2://usqmqUKJFIlCmvkCNSY64L3k@8.209.247.109:443?insecure=1#SS44-U-006
+hy2://dongtaiwang.com@62.210.124.146:22000?insecure=1&sni=www.microsoft.com#SS44-U-002
+hy2://usqmqUKJFIlCmvkCNSY64L3k@8.209.247.109:443?insecure=1&sni=bing.com#SS44-U-003
+hysteria2://mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj@64.188.98.171:443?insecure=1&sni=germany3.h2corp.local#SS44-U-004
+hysteria2://mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj@91.196.32.163:443?insecure=1&sni=germany3.h2corp.local#SS44-U-005
