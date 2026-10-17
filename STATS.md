@@ -1,17 +1,17 @@
 # 📊 SS44 Stats
 
-- Last update: **2026-10-17 13:54 UTC**
-- Fetched: **8969**
-- Unique valid: **4449**
-- Round1 TCP: **900** → open **546**
-- Round2 TRAFFIC: **546** → 🥇 GOLD **92**
-- Published: **92** (UDP extra **4**, clash **92**)
+- Last update: **2026-10-17 19:05 UTC**
+- Fetched: **8957**
+- Unique valid: **4448**
+- Round1 TCP: **900** → open **540**
+- Round2 TRAFFIC: **540** → 🥇 GOLD **84**
+- Published: **84** (UDP extra **5**, clash **84**)
 
 | Protocol | Count |
 |---|---|
 | hy2 | 3 |
-| hysteria2 | 1 |
-| ss | 35 |
-| trojan | 8 |
-| vless | 38 |
-| vmess | 7 |
+| hysteria2 | 2 |
+| ss | 28 |
+| trojan | 5 |
+| vless | 40 |
+| vmess | 6 |
