@@ -1,6 +1,3 @@
-hy2://wvA0PtDIuFbSqooIC2goKzFr@38.175.202.26:443?insecure=1&sni=bing.com#SS44-U-001
-hy2://d5530551-5e9a-4ac5-8539-cee87e38d9e2@2.26.3.75:443?insecure=1&sni=fi.67chat.ru#SS44-U-002
-hy2://7e68e32f-8015-4f37-9082-70e8b0b58043@13.212.245.120:443?insecure=1&sni=www.bing.com#SS44-U-003
-hysteria2://QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s@162.249.125.133:443?security=tls&obfs=salamander&obfs-password=c1b4086fea89914496c7e10967a419216566&insecure=0&sni=hy2-new.aspidnet.xyz#SS44-U-004
-hy2://gf1%3Agfhysteria2024@5.129.235.85:443?insecure=1&sni=5.129.235.85#SS44-U-005
-hy2://user317_windows%3Ac70565e9-a99f-40ef-b96c-469a3949eed2@s3.huhiuh.space:18642?insecure=1&sni=www.bing.com#SS44-U-006
+hy2://gf1%3Agfhysteria2024@5.129.235.85:443?insecure=1&sni=5.129.235.85#SS44-U-001
+hy2://gf1%3Agfhysteria2024@173.212.201.85:443?insecure=1&sni=173.212.201.85#SS44-U-002
+hy2://wvA0PtDIuFbSqooIC2goKzFr@38.175.202.26:443?insecure=1&sni=bing.com#SS44-U-003
