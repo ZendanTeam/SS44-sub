@@ -1,3 +1,2 @@
-hy2://gf1%3Agfhysteria2024@66.94.121.46:443?insecure=1&sni=66.94.121.46#SS44-U-001
-hy2://mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj@de.1.23.h2corp.org:443?insecure=1&sni=germany3.h2corp.local#SS44-U-002
-hy2://gf1%3Agfhysteria2024@5.129.235.85:443?insecure=1&sni=google.com#SS44-U-003
+hy2://4291c983-c520-46ac-82cc-48f14bef573f@129.213.91.185:35013?insecure=1&sni=129.213.91.185#SS44-U-001
+hy2://gf1%3Agfhysteria2024@66.94.121.46:443?insecure=1#SS44-U-002
