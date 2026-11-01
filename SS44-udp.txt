@@ -1,2 +1,1 @@
-hy2://4291c983-c520-46ac-82cc-48f14bef573f@129.213.91.185:35013?insecure=1#SS44-U-001
-hy2://a0052f4f-4c63-0002-a16f-ab2d5d718cd3@192.142.23.46:443?sni=diffoscope.com#SS44-U-002
+hysteria2://HowdyHysteria2023w0W@51.15.19.206:8443?insecure=1&obfs=salamander&obfs-password=HysteriaHowdy&sni=sni-here.com#SS44-U-001
