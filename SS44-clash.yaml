@@ -1,61 +1,26 @@
 # SS44 clash subscription — auto-generated (traffic-verified first)
 proxies:
-  - {name: SS44-001, type: hysteria2, server: 66.94.121.46, port: 443}
-    password: "gf1:gfhysteria2024"
-    skip-cert-verify: true
+  - {name: SS44-001, type: ss, server: 23.150.152.38, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - {name: SS44-002, type: vless, server: 15.204.97.206, port: 23576}
-    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "fuck.rkn"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": "01"}
-  - {name: SS44-003, type: vless, server: 15.204.97.198, port: 23576}
-    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
+  - {name: SS44-002, type: vless, server: 107.173.237.146, port: 8443}
+    uuid: "1d39f715-2740-4d99-bc3b-197cc48dcee7"
     udp: true
     network: "tcp"
     tls: true
-    servername: "fuck.rkn"
+    servername: "updates.cdn-apple.com"
     client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": "01"}
-  - {name: SS44-004, type: vmess, server: 84.17.41.2, port: 18000}
-    uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
-    alterId: 0
-    cipher: "auto"
+    reality-opts: {"public-key": "D3ojIs3AUKP_tV0E4TEjh90HBVJp24Nq3qMfdxD30kc", "short-id": "df8611c07d"}
+  - {name: SS44-003, type: ss, server: 173.244.56.6, port: 443}
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
     udp: true
-    network: "tcp"
-  - {name: SS44-005, type: vless, server: 94.247.142.1, port: 443}
-    uuid: "fd62968a-2e97-41ea-9aa0-aa61aed78955"
+  - {name: SS44-004, type: ss, server: 167.88.62.203, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-    network: "ws"
-    tls: true
-    servername: "simIlarcaTerpillarPvet-j5H6x4-1.simIlar-caterPillar-pVet.worKers.deV"
-    client-fingerprint: "chrome"
-    ws-opts: {"path": "/", "headers": {"Host": "simIlarcaTerpillarPvet-j5H6x4-1.simIlar-caterPillar-pVet.worKers.deV"}}
-  - {name: SS44-006, type: vless, server: 169.128.83.4, port: 57259}
-    uuid: "a1962f23-f8f8-412d-f2ce-3361e7b72889"
-    udp: true
-    network: "tcp"
-  - {name: SS44-007, type: trojan, server: 66.163.114.106, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "www.findconnectwithemployersandbuildprofessionalnetwork.com"
-  - {name: SS44-008, type: trojan, server: 66.163.114.114, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "learn.findconnectwithemployersandbuildprofessionalnetwork.com"
-  - {name: SS44-009, type: trojan, server: 167.88.61.52, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "courses.browseseniorrolesandenhanceyourcareertoday.com"
-  - {name: SS44-010, type: vless, server: 23.95.222.127, port: 8443}
+  - {name: SS44-005, type: vless, server: 23.95.222.127, port: 8443}
     uuid: "352ff568-f971-4613-bf48-92997a5d44ed"
     udp: true
     network: "tcp"
@@ -64,698 +29,94 @@ proxies:
     client-fingerprint: "chrome"
     flow: "xtls-rprx-vision"
     reality-opts: {"public-key": "ribQDOlZ69PzvZ1EDF0EcmMvbq_T5RQrVRBSGUU2riU", "short-id": "35cd899f8de04801"}
-  - {name: SS44-011, type: ss, server: 156.146.38.170, port: 443}
-    cipher: "aes-128-gcm"
-    password: "shadowsocks"
+  - {name: SS44-006, type: vless, server: 15.204.97.209, port: 23576}
+    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
     udp: true
-  - {name: SS44-012, type: ss, server: 156.146.38.170, port: 443}
-    cipher: "aes-128-gcm"
-    password: "shadowsocks"
+    network: "tcp"
+    tls: true
+    servername: "fuck.rkn"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": "01"}
+  - {name: SS44-007, type: vless, server: 15.204.97.216, port: 23576}
+    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
     udp: true
-  - {name: SS44-013, type: ss, server: 216.106.178.169, port: 19999}
+    network: "tcp"
+    tls: true
+    servername: "fuck.rkn"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": "01"}
+  - {name: SS44-008, type: vless, server: 15.204.97.219, port: 23576}
+    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "fuck.rkn"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": ""}
+  - {name: SS44-009, type: vless, server: 15.204.97.198, port: 23576}
+    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "fuck.rkn"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": "01"}
+  - {name: SS44-010, type: vless, server: 15.204.97.214, port: 23576}
+    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "fuck.rkn"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": "01"}
+  - {name: SS44-011, type: trojan, server: 66.163.114.45, port: 443}
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    network: "tcp"
+    sni: "cdn.findconnectwithemployersandbuildprofessionalnetwork.com"
+  - {name: SS44-012, type: ss, server: 38.91.107.188, port: 19999}
     cipher: "aes-256-gcm"
     password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - {name: SS44-014, type: vless, server: saas.sin.fan, port: 443}
-    uuid: "5d7b401c-78fa-4254-872e-6d42bf7e75ec"
-    udp: true
-    network: "ws"
-    tls: true
-    servername: "vp5.1145678.xyz"
-    ws-opts: {"path": "/servicefp", "headers": {"Host": "vp5.1145678.xyz"}}
-  - {name: SS44-015, type: trojan, server: 66.163.112.76, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "api.unlockyourfuturefindyourperfectcareer.com"
-  - {name: SS44-016, type: vless, server: 67.220.73.204, port: 18662}
-    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0", "short-id": "48050fab"}
-  - {name: SS44-017, type: vmess, server: 38.110.1.246, port: 18000}
-    uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: "tcp"
-  - {name: SS44-018, type: vless, server: mtb3.cmelora.com, port: 34521}
-    uuid: "c511858b-d01f-4d35-a88a-be83a8fd1e22"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "1Ci2j2Yo0tiO0pKuIhr4jx1zIQ1Mq4GaeMg_Qirrv2A", "short-id": "bcc7cb59"}
-  - {name: SS44-019, type: vmess, server: 38.110.1.246, port: 18000}
-    uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: "tcp"
-  - {name: SS44-020, type: trojan, server: 216.152.147.79, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "blog.connectingpeoplewithgreatjobs.com"
-  - {name: SS44-021, type: trojan, server: 170.101.101.19, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "learn.explorecreativejobsandenhanceyourcareerportfolio.com"
-  - {name: SS44-022, type: trojan, server: 66.163.122.25, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "cdn.searchnationwidecareerchangehelperandguidancetoday.com"
-  - {name: SS44-023, type: vless, server: 185.95.231.156, port: 443}
-    uuid: "1f8cf47a-b66a-4916-979f-26edfcf44eea"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To", "short-id": "a3a578ab"}
-  - {name: SS44-024, type: trojan, server: 66.163.122.81, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "courses.searchnationwidecareerchangehelperandguidancetoday.com"
-  - {name: SS44-025, type: ss, server: 51.222.136.236, port: 8882}
+  - {name: SS44-013, type: ss, server: 193.151.160.9, port: 19999}
     cipher: "aes-256-gcm"
-    password: "kDWvXYZoTBcGkC4"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-  - {name: SS44-026, type: vless, server: 3h-unitedstates1.09vpn.com, port: 80}
-    uuid: "18cf8db1-9f86-43f7-baa0-382efb7f2dfa"
+  - {name: SS44-014, type: ss, server: 149.22.95.183, port: 443}
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
     udp: true
-    network: "ws"
-    ws-opts: {"path": "/vless/", "headers": {"Host": "3h-unitedstates1.09vpn.com"}}
-  - {name: SS44-027, type: vless, server: 195.123.235.183, port: 443}
-    uuid: "c14ec728-3eca-4750-87fc-fd1e6aeb81d5"
+  - {name: SS44-015, type: ss, server: 45.86.51.18, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
     udp: true
-    network: "tcp"
-    tls: true
-    servername: "gateway.icloud.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "H3R3BUAl7thrIZsznTbb-eRREIjQOH2f3WO0oTN7OGY", "short-id": "a0e2a6074c6456b0"}
-  - {name: SS44-028, type: vless, server: 167.17.69.171, port: 443}
-    uuid: "00144519-7e0d-476b-8d28-435576af9262"
+  - {name: SS44-016, type: ss, server: 37.19.198.236, port: 443}
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
     udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk", "short-id": "0990d22f"}
-  - {name: SS44-029, type: trojan, server: 216.238.80.100, port: 443}
+  - {name: SS44-017, type: ss, server: 64.177.90.30, port: 8388}
+    cipher: "aes-256-gcm"
+    password: "BWyPPTusFKhGgzKh"
+    udp: true
+  - {name: SS44-018, type: ss, server: 167.88.63.99, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-019, type: ss, server: 38.22.17.139, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-020, type: trojan, server: 216.238.80.100, port: 443}
     password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
     udp: true
     network: "tcp"
     sni: "connectwithtopemployersandfindidealjobs.com"
-  - {name: SS44-030, type: ss, server: 149.22.87.204, port: 443}
-    cipher: "aes-128-gcm"
-    password: "shadowsocks"
-    udp: true
-  - {name: SS44-031, type: trojan, server: 169.197.140.171, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "cdn.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
-  - {name: SS44-032, type: trojan, server: 66.163.112.242, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "resources.unlockyourfuturefindyourperfectcareer.com"
-  - {name: SS44-033, type: trojan, server: 169.197.140.169, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "api.discoverfreshgraduatejobsstartyourprofessionaljourney.com"
-  - {name: SS44-034, type: vmess, server: 67.220.74.188, port: 1270}
-    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "xmfhlpy.com"
-  - {name: SS44-035, type: trojan, server: 66.163.122.46, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "searchnationwidecareerchangehelperandguidancetoday.com"
-  - {name: SS44-036, type: trojan, server: us001.zestapp778.com, port: 57277}
-    password: "5t6i121em5lkmsmk"
-    udp: true
-    network: "tcp"
-    sni: "us001.zestapp778.com"
-  - {name: SS44-037, type: trojan, server: 216.152.156.42, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "blog.healthcarejobshubenhancemedicalprofessionalskillstoday.com"
-  - {name: SS44-038, type: ss, server: 185.176.206.9, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-039, type: ss, server: 198.244.202.215, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-040, type: vless, server: 213.182.201.18, port: 3090}
-    uuid: "8bac7917-b4d2-4338-bbfc-5d47bda8c5ab"
-    udp: true
-    network: "grpc"
-    grpc-opts: {"grpc-service-name": "vless"}
-  - {name: SS44-041, type: ss, server: 5.188.181.201, port: 9042}
-    cipher: "aes-256-cfb"
-    password: "S7KwUu7yBy58S3Ga"
-    udp: true
-  - {name: SS44-042, type: trojan, server: 167.179.108.225, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "discoverparttimepositionsandsupplementyourincomeguide.com"
-  - {name: SS44-043, type: ss, server: 167.17.64.22, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-044, type: ss, server: 141.98.101.181, port: 443}
-    cipher: "aes-128-gcm"
-    password: "shadowsocks"
-    udp: true
-  - {name: SS44-045, type: ss, server: 5.188.181.201, port: 9011}
-    cipher: "aes-256-cfb"
-    password: "M3t2ZEQcMGRWBjRa"
-    udp: true
-  - {name: SS44-046, type: ss, server: 57.129.83.85, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-047, type: ss, server: 5.188.181.201, port: 9037}
-    cipher: "aes-256-cfb"
-    password: "TN2YqghxeFDKZfLU"
-    udp: true
-  - {name: SS44-048, type: ss, server: 23.162.152.22, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-049, type: ss, server: 82.38.31.216, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-050, type: ss, server: 82.38.31.66, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - {name: SS44-051, type: ss, server: 193.29.139.147, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-052, type: ss, server: 82.38.31.171, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - {name: SS44-053, type: ss, server: 82.38.31.181, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-054, type: ss, server: 82.38.31.176, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-055, type: ss, server: 79.127.184.104, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-056, type: ss, server: 167.17.64.27, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-057, type: ss, server: 82.38.31.207, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-058, type: ss, server: 82.38.31.194, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-059, type: ss, server: 82.38.31.217, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-060, type: ss, server: 82.38.31.184, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-061, type: ss, server: 82.38.31.162, port: 443}
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - {name: SS44-062, type: ss, server: 38.109.228.110, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-063, type: ss, server: 82.38.31.157, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "oZIoA69Q8yhcQV8ka3Pa3A"
-    udp: true
-  - {name: SS44-064, type: ss, server: 82.38.31.192, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-065, type: ss, server: 158.173.20.208, port: 443}
-    cipher: "aes-128-gcm"
-    password: "shadowsocks"
-    udp: true
-  - {name: SS44-066, type: ss, server: 51.79.228.131, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-067, type: ss, server: 15.235.164.133, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-068, type: vmess, server: 149.88.23.202, port: 18000}
-    uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: "tcp"
-  - {name: SS44-069, type: ss, server: 82.38.31.206, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-070, type: vmess, server: 149.88.23.207, port: 18000}
-    uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: "tcp"
-  - {name: SS44-071, type: vless, server: 3.114.220.22, port: 18007}
-    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0", "short-id": "48050fab"}
-  - {name: SS44-072, type: ss, server: 84.20.27.183, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-073, type: ss, server: 202.50.253.72, port: 19999}
-    cipher: "aes-256-gcm"
-    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-    udp: true
-  - {name: SS44-074, type: vless, server: 51.158.206.34, port: 23576}
-    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "fuck.rkn"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": "01"}
-  - {name: SS44-075, type: trojan, server: kr002.zestapp778.com, port: 48851}
-    password: "5t6i121em5lkmsmk"
-    udp: true
-    network: "tcp"
-    sni: "kr002.zestapp778.com"
-  - {name: SS44-076, type: trojan, server: 216.152.147.48, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "courses.connectingpeoplewithgreatjobs.com"
-  - {name: SS44-077, type: vless, server: 51.158.206.25, port: 23576}
-    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "fuck.rkn"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": "01"}
-  - {name: SS44-078, type: vless, server: 188.116.27.6, port: 443}
-    uuid: "7e81eba3-28fe-4cf6-b397-d5c08fea38ab"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.sony.co.uk"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "mprwTEsQ9nJ78qG7BJskAWXaVfDxeMHBkQHbReVfMnc", "short-id": "1174"}
-  - {name: SS44-079, type: vless, server: 51.158.206.96, port: 23576}
-    uuid: "48ff2b70-e180-582f-8866-d9a2edeed5f5"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "fuck.rkn"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s", "short-id": "01"}
-  - {name: SS44-080, type: vless, server: 45.129.242.56, port: 443}
-    uuid: "ebdfaf99-41d8-4e48-8196-d54510ffb556"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "YURKlEQ3rap4KOXXGsVFZyYev2oDU2gCEbNTXPdKWRY", "short-id": "abcdef"}
-  - {name: SS44-081, type: trojan, server: 64.176.7.205, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "advanceyouremploymentskillsandcareerdevelopmenthub.com"
-  - {name: SS44-082, type: vless, server: 51.77.217.70, port: 2053}
-    uuid: "bf16ee0c-8b3c-41e4-ab3a-8b48033c404e"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts: {"public-key": "g63cT3uI0Y5iUtj3m__RYz7nmR1eIK4AYikdnZCl63w", "short-id": "bfe58beb41f1d09f"}
-  - {name: SS44-083, type: trojan, server: 45.63.30.142, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "connectwithemployerstohireyouridealteam.com"
-  - {name: SS44-084, type: vless, server: 82.118.19.153, port: 443}
-    uuid: "adcaa148-7c66-4282-a81a-99ec8afa029d"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "Tiuy8om5Lk0pWL95-8LaFFTwH0vbURVMoOkaW9xGaiE", "short-id": "670ed9f350bd8ee0"}
-  - {name: SS44-085, type: trojan, server: 208.69.78.33, port: 443}
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    network: "tcp"
-    sni: "courses.yourultimateprofessionalcareerhub.com"
-  - {name: SS44-086, type: vless, server: 45.144.234.157, port: 14430}
-    uuid: "59b0d30e-9b29-4fda-a35c-b2901ec32db7"
-    udp: true
-    network: "ws"
-    ws-opts: {"path": "/vless", "headers": {"Host": "45.144.234.157"}}
-  - {name: SS44-087, type: vless, server: 138.124.86.230, port: 48115}
-    uuid: "b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b"
-    udp: true
-    network: "grpc"
-    tls: true
-    servername: "138-124-86-230.sslip.io"
-    client-fingerprint: "chrome"
-    grpc-opts: {"grpc-service-name": "138-124-86-230-sslip-io"}
-  - {name: SS44-088, type: vless, server: 194.104.94.141, port: 443}
-    uuid: "6ba4ed2e-b42b-4880-8b3b-c7e2df2d02f6"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "se3.shtil.io"
-    client-fingerprint: "chrome"
-  - {name: SS44-089, type: vless, server: 13.143.167.251, port: 8443}
-    uuid: "a4e5f910-23f4-470f-82a7-ed9d7be71dec"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "teamdocs.su"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "d6qmF8ibk_PxtDJPzSa7LKw9VUI_mZ59DrTvmW3RaFc", "short-id": "10983e6c816181c2"}
-  - {name: SS44-090, type: vless, server: 217.144.188.185, port: 443}
-    uuid: "8d954cbe-7ca9-402d-bfaf-aca6c92c04c3"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.nordea.fi"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "_ZRqqX7UVPTq--m8Lk8YHhrfElad2dIIpTh3D59f8zk", "short-id": ""}
-  - {name: SS44-091, type: vless, server: 54.251.9.130, port: 24146}
-    uuid: "9d9a048b-3aea-4b3e-b106-1106bf301feb"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.intel.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "VeluC9A7XDurAWQNgXKShS2SJSgoK79QHFgiAMYrvGo", "short-id": "7205d9079521832c"}
-  - {name: SS44-092, type: ss, server: 102.37.156.224, port: 443}
-    cipher: "chacha20-ietf-poly1305"
-    password: "aduB9HGxQHjA2SBMRjkHX6"
-    udp: true
-  - {name: SS44-093, type: vless, server: 54.169.200.246, port: 41688}
-    uuid: "49c0aac1-5e05-4f04-b624-248fc59e03c4"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.intel.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "srwIElIGTPs0kshpN1vvPsn4wixV_pLd56y_v9m0sTk", "short-id": "7f342137c20387"}
-  - {name: SS44-094, type: vless, server: 188.130.209.204, port: 443}
-    uuid: "4a0812f0-f9d7-4afd-9ae3-6c38e1e59485"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "promo-digital.wb.ru"
-    client-fingerprint: "ios"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "3p6W4rMBh1HCwbjq4lcbWO0KjkqTshJU5lkTix5nwTc", "short-id": "d3f314d0b692f63d"}
-  - {name: SS44-095, type: vmess, server: 54.37.131.126, port: 80}
-    uuid: "059fda3e-5ca9-4fbd-dd89-01cc6d4bb5dd"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: "ws"
-    ws-opts: {"path": "/", "headers": {"Host": "google.whatsapp.snapp.torob.basalam.hesanid8.ir."}}
-  - {name: SS44-096, type: vless, server: 172.67.156.147, port: 443}
-    uuid: "4e4f1f70-5e56-4a76-bb9d-db087f4690c4"
-    udp: true
-    network: "ws"
-    tls: true
-    servername: "jp3.yohototo.top"
-    ws-opts: {"path": "/tyxyws", "headers": {"Host": "jp3.yohototo.top"}}
-  - {name: SS44-097, type: ss, server: 82.38.31.185, port: 8080}
-    cipher: "chacha20-ietf-poly1305"
-    password: "k1dBOmOB4oqi7Ump37a1bQ"
-    udp: true
-  - {name: SS44-098, type: vless, server: 178.212.35.198, port: 443}
-    uuid: "6bdc8320-7eae-46fc-be08-f5f54e65dfc8"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts: {"public-key": "3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q", "short-id": "6bdc8320"}
-  - {name: SS44-099, type: vless, server: 103.106.229.177, port: 21001}
-    uuid: "67952583-8572-42e1-943d-0602794f885b"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts: {"public-key": "IRaSB0ImgMO7fsrIbh9i3Pz-bgo5F1jKeC51Fpfs9AA", "short-id": "a51c3ccb2320024a"}
-  - {name: SS44-100, type: vless, server: hk1.japancase.site, port: 443}
-    uuid: "db80088c-32a1-4cb8-a907-0f3cb7844152"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "hk1.japancase.site"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "pGCqNljaUIUVC7xpHa9nFnu6vsQ0OX3QyfvYMhLZuWY", "short-id": "bee10b047804c637"}
-  - {name: SS44-101, type: vless, server: 87.199.205.28, port: 443}
-    uuid: "501a2da5-cb22-4a3f-915e-e3b821d1d62d"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "vkvd754.okcdn.ru"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw", "short-id": "b7cd177731793b1e"}
-  - {name: SS44-102, type: vless, server: 51.38.71.147, port: 8443}
-    uuid: "c08f0056-7a6d-4931-813b-aaa3cdd00aed"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "node-uk.connectsuite.org"
-    client-fingerprint: "chrome"
-  - {name: SS44-103, type: vless, server: 209.200.246.148, port: 443}
-    uuid: "ca52e2b6-fb9f-4dac-b6dc-49da9923f251"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk", "short-id": "f98843107912e782"}
-  - {name: SS44-104, type: vless, server: 81.208.170.142, port: 1500}
-    uuid: "e332f028-d343-5b44-8016-b3130f39e133"
-    udp: true
-    network: "grpc"
-    tls: true
-    servername: "www.ebay.com"
-    client-fingerprint: "chrome"
-    reality-opts: {"public-key": "VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE", "short-id": "775eb6408888248e"}
-    grpc-opts: {"grpc-service-name": ""}
-  - {name: SS44-105, type: vless, server: ai.smrtai.top, port: 443}
-    uuid: "086bf957-9cd0-4e55-8280-bbef10435b41"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    reality-opts: {"public-key": "R-w7BpNgtryZRBMyRoHx81OnjzAwrKhVtV1EUKLFJzc", "short-id": "086bf957"}
-  - {name: SS44-106, type: vmess, server: 145.239.55.210, port: 80}
-    uuid: "c5443f55-d405-4990-ac36-8fd83ae2c17e"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: "ws"
-    ws-opts: {"path": "/", "headers": {"Host": "google.whatsapp.snapp.torob.basalam.fortresshost.ir."}}
-  - {name: SS44-107, type: vless, server: 198.16.113.219, port: 8443}
-    uuid: "e3e0e1c3-599e-4ae1-8ad4-d9e90effacc4"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE", "short-id": "69984b9e02545831"}
-  - {name: SS44-108, type: hysteria2, server: 51.15.19.206, port: 8443}
-    password: "HowdyHysteria2023w0W"
-    skip-cert-verify: true
-    udp: true
-    sni: "sni-here.com"
-  - {name: SS44-109, type: trojan, server: 157.254.38.210, port: 20086}
-    password: "d9064589-74af-432a-9390-5d8a9da281bf"
-    udp: true
-    network: "tcp"
-    sni: "hk.catxstar.com"
-  - {name: SS44-110, type: vless, server: 104.253.216.227, port: 443}
-    uuid: "ee39fb11-56a3-4ee7-9e7c-35a4235bd30e"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.tradingview.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "FjcEZNQ8t5E4R04_11T6ghsOutdqwKKrelkuadakoQg", "short-id": "b27ba098687b"}
-  - {name: SS44-111, type: vless, server: sql.popmintxo.cc, port: 443}
-    uuid: "d806a58b-33aa-42e0-b170-395e49c16b37"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.microsoft.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "Y0noOXC8qHmbM0GmDpj-9BBwKSOtHs-uMbNfKU050GQ", "short-id": "b558b9305a0b"}
-  - {name: SS44-112, type: vless, server: w.geogame.ir, port: 2053}
-    uuid: "fbda2834-b1e7-4148-afb9-deda31036a30"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "w.geogame.ir"
-    client-fingerprint: "chrome"
-  - {name: SS44-113, type: ss, server: 51.222.141.125, port: 445}
-    cipher: "aes-256-gcm"
-    password: "zDNVedRFPQexG9v"
-    udp: true
-  - {name: SS44-114, type: vless, server: 208.69.78.217, port: 2053}
-    uuid: "c0dd6d59-1573-43af-8b70-1470b2632a6d"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    reality-opts: {"public-key": "A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0", "short-id": "ad86e2d52ff40ebd"}
-  - {name: SS44-115, type: trojan, server: 104.25.239.113, port: 2053}
-    password: "gHQP0D7D15"
-    udp: true
-    network: "ws"
-    sni: "marvdasht.phonecomparisonblog.org"
-    ws-opts: {"path": "/"}
-  - {name: SS44-116, type: vless, server: 154.21.89.67, port: 18889}
-    uuid: "da03af6b-a490-4064-8100-d91194e086b6"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "dmit.shiinayane.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "HH7pKVkvqwZBs9yeZ6ffYZ1ColfFNT94Yek4GC4NLFs", "short-id": "6ba85179e30d4fc2"}
-  - {name: SS44-117, type: trojan, server: 104.16.186.130, port: 2053}
-    password: "gHQP0D7D15"
-    udp: true
-    network: "ws"
-    sni: "marvdasht.phonecomparisonblog.org"
-    ws-opts: {"path": "/"}
-  - {name: SS44-118, type: vless, server: 188.114.98.0, port: 443}
-    uuid: "4e4f1f70-5e56-4a76-bb9d-db087f4690c4"
-    udp: true
-    network: "ws"
-    tls: true
-    servername: "jp3.yohototo.top"
-    client-fingerprint: "unsafe"
-    ws-opts: {"path": "/tyxyws", "headers": {"Host": "jp3.yohototo.top"}}
-  - {name: SS44-119, type: vmess, server: 129.146.143.80, port: 48111}
-    uuid: "d4603cc2-e0ee-4651-83f5-1db5b7168177"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    network: "tcp"
-  - {name: SS44-120, type: vless, server: 150.251.113.34, port: 443}
-    uuid: "d7d724b5-17ce-4f3c-877d-dfbf0f07afa1"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "8yMLSTbkpJFfbgTjNzotzz7U8OT6AERrclgKdKrXXW8", "short-id": "150a627d15154cf2"}
-  - {name: SS44-121, type: vless, server: 191.40.7.245, port: 42246}
-    uuid: "d016aa1b-1a84-4119-b50e-e94cacfb1bb3"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "www.siemens.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "Jh6s_TTVn8ecSokbF8vrWP6hsKm-FywQjKAeB0JWrCw", "short-id": "d01a0b9c"}
-  - {name: SS44-122, type: ss, server: 15.204.246.107, port: 8888}
-    cipher: "aes-256-gcm"
-    password: "Y6R9pAtvxxzmGC"
-    udp: true
-  - {name: SS44-123, type: vless, server: 46.29.255.123, port: 59539}
-    uuid: "30572b57-f5ab-4eb8-82d4-a24d399b99f6"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "cloudflare-dns.com"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ", "short-id": ""}
-  - {name: SS44-124, type: vless, server: 161.97.160.224, port: 443}
-    uuid: "b81b4d1b-7f20-48f1-82dc-d24bef898cab"
-    udp: true
-    network: "tcp"
-    tls: true
-    servername: "passport.yandex.ru"
-    client-fingerprint: "chrome"
-    flow: "xtls-rprx-vision"
-    reality-opts: {"public-key": "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0", "short-id": "e6"}
-  - {name: SS44-125, type: vmess, server: guanwang.awsno.com, port: 443}
+  - {name: SS44-021, type: vmess, server: guanwang.awsno.com, port: 443}
     uuid: "6a89a215-22bf-4bd7-9642-b95b2e09583a"
     alterId: 0
     cipher: "auto"
@@ -764,3 +125,512 @@ proxies:
     tls: true
     servername: "guanwang.awsno.com"
     ws-opts: {"path": "/hls/cctv5phd.m3u8", "headers": {"Host": "guanwang.awsno.com"}}
+  - {name: SS44-022, type: trojan, server: 216.152.156.42, port: 443}
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    network: "tcp"
+    sni: "blog.healthcarejobshubenhancemedicalprofessionalskillstoday.com"
+  - {name: SS44-023, type: ss, server: 162.251.62.31, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-024, type: ss, server: 193.151.163.18, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-025, type: trojan, server: resources.findlocaljobnetworkandbuildcommunityconnections.com, port: 443}
+    password: "f0eb8c92ce8946aaba856569cff1a16b"
+    udp: true
+    network: "tcp"
+    sni: "resources.findlocaljobnetworkandbuildcommunityconnections.com"
+  - {name: SS44-026, type: vless, server: 5.34.178.120, port: 443}
+    uuid: "23b848b7-93e5-4d96-b36d-ed704912e5b7"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "4RaNuv9yehmcfpdzvRxCWWzEWERWzZSIHqcgg3l35Cw", "short-id": "e16bbf1a5bee2321"}
+  - {name: SS44-027, type: vless, server: 47.253.226.114, port: 443}
+    uuid: "055a1ce8-2a16-4a0d-a2c2-22826c9b2413"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc", "short-id": ""}
+  - {name: SS44-028, type: vmess, server: 162.251.61.46, port: 1270}
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "xmfhlpy.com"
+  - {name: SS44-029, type: trojan, server: 170.101.101.67, port: 443}
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    network: "tcp"
+    sni: "courses.explorecreativejobsandenhanceyourcareerportfolio.com"
+  - {name: SS44-030, type: trojan, server: 216.152.156.212, port: 443}
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    network: "tcp"
+    sni: "courses.healthcarejobshubenhancemedicalprofessionalskillstoday.com"
+  - {name: SS44-031, type: trojan, server: 170.101.101.19, port: 443}
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    network: "tcp"
+    sni: "learn.explorecreativejobsandenhanceyourcareerportfolio.com"
+  - {name: SS44-032, type: trojan, server: 170.101.101.53, port: 443}
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    network: "tcp"
+    sni: "www.explorecreativejobsandenhanceyourcareerportfolio.com"
+  - {name: SS44-033, type: trojan, server: 170.101.101.112, port: 443}
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    network: "tcp"
+    sni: "resources.explorecreativejobsandenhanceyourcareerportfolio.com"
+  - {name: SS44-034, type: ss, server: 88.216.254.18, port: 1080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "V7WLaYdujkwnj6xxXq-2BSxGWEcSJtTA"
+    udp: true
+  - {name: SS44-035, type: ss, server: 149.22.87.204, port: 443}
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - {name: SS44-036, type: trojan, server: ca001.zestapp778.com, port: 46977}
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    network: "tcp"
+    sni: "ca001.zestapp778.com"
+  - {name: SS44-037, type: ss, server: 5.188.181.201, port: 9029}
+    cipher: "aes-256-cfb"
+    password: "dU3DSNS8wYPXzEKw"
+    udp: true
+  - {name: SS44-038, type: ss, server: 5.188.181.201, port: 9019}
+    cipher: "aes-256-cfb"
+    password: "GA9KzeEgvfxNrgmM"
+    udp: true
+  - {name: SS44-039, type: ss, server: 5.188.181.201, port: 9005}
+    cipher: "aes-256-cfb"
+    password: "ZET59LF6DvCC8KVt"
+    udp: true
+  - {name: SS44-040, type: ss, server: 167.17.64.22, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-041, type: ss, server: 82.38.31.201, port: 8080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - {name: SS44-042, type: ss, server: 82.38.31.211, port: 8080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - {name: SS44-043, type: ss, server: 82.38.31.214, port: 8080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - {name: SS44-044, type: ss, server: 186.190.215.251, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-045, type: ss, server: 82.38.31.187, port: 8080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - {name: SS44-046, type: ss, server: 82.38.31.207, port: 8080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - {name: SS44-047, type: ss, server: 82.38.31.190, port: 8080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - {name: SS44-048, type: ss, server: 185.213.23.63, port: 990}
+    cipher: "chacha20-ietf-poly1305"
+    password: "ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44="
+    udp: true
+  - {name: SS44-049, type: ss, server: 158.173.20.208, port: 443}
+    cipher: "aes-128-gcm"
+    password: "shadowsocks"
+    udp: true
+  - {name: SS44-050, type: ss, server: 178.83.185.156, port: 8080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "oZIoA69Q8yhcQV8ka3Pa3A"
+    udp: true
+  - {name: SS44-051, type: ss, server: 57.129.76.233, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-052, type: ss, server: 138.199.55.243, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-053, type: ss, server: 82.38.31.191, port: 8080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - {name: SS44-054, type: ss, server: 185.164.175.81, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-055, type: vmess, server: 168.138.43.75, port: 80}
+    uuid: "11c3627f-31e8-4695-dfbd-34076e2f1f5d"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: "ws"
+    ws-opts: {"path": "/cctv13.m3u8", "headers": {"Host": "168.138.43.75"}}
+  - {name: SS44-056, type: ss, server: 202.50.253.18, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-057, type: ss, server: 141.164.45.187, port: 5498}
+    cipher: "aes-256-gcm"
+    password: "lGqs95QkFHo2NV"
+    udp: true
+  - {name: SS44-058, type: vless, server: 5.149.249.94, port: 443}
+    uuid: "f038bdac-d9f7-47b5-a376-47ebc71c950a"
+    udp: true
+    network: "grpc"
+    tls: true
+    servername: "nlb.kosmosapp.net"
+    client-fingerprint: "chrome"
+    reality-opts: {"public-key": "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ", "short-id": "27350908de933e09"}
+    grpc-opts: {"grpc-service-name": "neurex"}
+  - {name: SS44-059, type: vless, server: 79.141.164.83, port: 443}
+    uuid: "baac9be2-ac64-48ae-a891-cde4b9a35213"
+    udp: true
+    network: "grpc"
+    tls: true
+    servername: "nlb.kosmosapp.net"
+    client-fingerprint: "chrome"
+    reality-opts: {"public-key": "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ", "short-id": "27350908de933e09"}
+    grpc-opts: {"grpc-service-name": "neurex"}
+  - {name: SS44-060, type: vless, server: 5.149.248.151, port: 443}
+    uuid: "502d54dd-3eda-49fc-b7d5-292a96042829"
+    udp: true
+    network: "grpc"
+    tls: true
+    servername: "nla.kosmosapp.net"
+    client-fingerprint: "chrome"
+    reality-opts: {"public-key": "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ", "short-id": "27350908de933e09"}
+    grpc-opts: {"grpc-service-name": "neurex"}
+  - {name: SS44-061, type: ss, server: 185.226.172.8, port: 8008}
+    cipher: "aes-256-gcm"
+    password: "XKFKl2rULjIp74"
+    udp: true
+  - {name: SS44-062, type: vmess, server: 149.7.16.228, port: 1270}
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "xmfhlpy.com"
+  - {name: SS44-063, type: vmess, server: 149.88.23.202, port: 18000}
+    uuid: "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: "tcp"
+  - {name: SS44-064, type: hysteria2, server: 62.210.124.146, port: 22000}
+    password: "dongtaiwang.com"
+    skip-cert-verify: true
+    udp: true
+    sni: "www.microsoft.com"
+  - {name: SS44-065, type: ss, server: 130.49.189.158, port: 43558}
+    cipher: "chacha20-ietf-poly1305"
+    password: "yZiPrr484OdSYcivDUv+UIygwvyW+HQYytKsIgTw9tU="
+    udp: true
+  - {name: SS44-066, type: ss, server: 149.88.106.74, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-067, type: vless, server: fr.golangwikito.cfd, port: 443}
+    uuid: "f8d52ece-fad4-478d-875d-df6eed3befa7"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "fr.golangwikito.cfd"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "isYQuhKDrgc7IQ7G0LHywFnt57wffrkZ-er18DkVsBA", "short-id": "e6d589857d1cec5e"}
+  - {name: SS44-068, type: trojan, server: 216.152.147.79, port: 443}
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    network: "tcp"
+    sni: "blog.connectingpeoplewithgreatjobs.com"
+  - {name: SS44-069, type: vless, server: 208.69.78.217, port: 2053}
+    uuid: "c0dd6d59-1573-43af-8b70-1470b2632a6d"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    reality-opts: {"public-key": "A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0", "short-id": "ad86e2d52ff40ebd"}
+  - {name: SS44-070, type: vless, server: 145.223.68.58, port: 443}
+    uuid: "edb50d20-2d3e-4c1e-8a75-a17168a89aa5"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "qc2DcqT9zPPZr6ePZ7ukxACWrYhRNIBjDIjCK7veyQg", "short-id": "a44ff7d2e80213c2"}
+  - {name: SS44-071, type: vless, server: 194.104.94.141, port: 443}
+    uuid: "6ba4ed2e-b42b-4880-8b3b-c7e2df2d02f6"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "se3.shtil.io"
+    client-fingerprint: "chrome"
+  - {name: SS44-072, type: vless, server: 51.38.71.147, port: 8443}
+    uuid: "c08f0056-7a6d-4931-813b-aaa3cdd00aed"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "node-uk.connectsuite.org"
+    client-fingerprint: "chrome"
+  - {name: SS44-073, type: vless, server: 46.29.255.123, port: 59539}
+    uuid: "30572b57-f5ab-4eb8-82d4-a24d399b99f6"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "cloudflare-dns.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ", "short-id": ""}
+  - {name: SS44-074, type: vless, server: 46.28.71.247, port: 443}
+    uuid: "12c53e32-e589-47d6-b857-e4132294f767"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE", "short-id": "0dfc23fe80778c00"}
+  - {name: SS44-075, type: vless, server: novonl.subv.ru, port: 443}
+    uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "golos.mail.ru"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "1vSZjvhZO01oAEH3b7eebR1qF5dLU1Dq2E7xu8pwGSs", "short-id": "428ef87fd47a3a32"}
+  - {name: SS44-076, type: trojan, server: 216.152.147.74, port: 443}
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    network: "tcp"
+    sni: "api.connectingpeoplewithgreatjobs.com"
+  - {name: SS44-077, type: vless, server: 67.159.52.81, port: 443}
+    uuid: "a16bd0e2-ff2e-4e4c-a955-0c684255a065"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "sg.fasti.win"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "-YTGWg5DjsLDyaDfr1D83kiUK22LVcrK3yC53lqqigs", "short-id": "feedbacc"}
+  - {name: SS44-078, type: vless, server: 206.206.76.75, port: 443}
+    uuid: "32cf52f4-b8d2-4ed5-a37c-0d0a8e743309"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "gSHylaTvEzWj19Bk-zLHXKYUINGWVmo_ybCiD2CRinE", "short-id": "a775360a48ef5cfb"}
+  - {name: SS44-079, type: vless, server: 95.142.32.42, port: 8444}
+    uuid: "a8321cfe-39a2-48a0-a918-f01f7d9006ed"
+    udp: true
+    network: "ws"
+    tls: true
+    servername: "nl18.meshbeat.online"
+    client-fingerprint: "chrome"
+    ws-opts: {"path": "/api/v1/devices/86f81c4330/telemetry", "headers": {"Host": "nl18.meshbeat.online"}}
+  - {name: SS44-080, type: ss, server: 102.133.165.160, port: 16233}
+    cipher: "chacha20-ietf-poly1305"
+    password: "Xsy8Ox4yOV3xLlpxtjzs3X"
+    udp: true
+  - {name: SS44-081, type: ss, server: 194.68.44.42, port: 64546}
+    cipher: "chacha20-ietf-poly1305"
+    password: "U83u9OGpvSatIUW7LsWffr"
+    udp: true
+  - {name: SS44-082, type: vless, server: netx.smrtai.top, port: 443}
+    uuid: "d8b58872-cc25-4bb2-badb-b86399c075fa"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts: {"public-key": "L9IllZt5vcjYVY_6rmCJ_9ypmJsBK8dSWkNVCStrZjk", "short-id": "d8b58872"}
+  - {name: SS44-083, type: vless, server: 95.128.71.79, port: 10444}
+    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo", "short-id": "8debcf36f1cc69ff"}
+  - {name: SS44-084, type: vless, server: 178.212.35.198, port: 443}
+    uuid: "6bdc8320-7eae-46fc-be08-f5f54e65dfc8"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts: {"public-key": "3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q", "short-id": "6bdc8320"}
+  - {name: SS44-085, type: ss, server: 198.98.53.130, port: 443}
+    cipher: "chacha20-ietf-poly1305"
+    password: "eDfN7SODQceIOmIAbtJJtK"
+    udp: true
+  - {name: SS44-086, type: vless, server: 3.39.4.109, port: 18967}
+    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0", "short-id": "48050fab"}
+  - {name: SS44-087, type: vless, server: 198.16.113.219, port: 8443}
+    uuid: "e3e0e1c3-599e-4ae1-8ad4-d9e90effacc4"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE", "short-id": "69984b9e02545831"}
+  - {name: SS44-088, type: vless, server: 54.251.9.130, port: 24146}
+    uuid: "9d9a048b-3aea-4b3e-b106-1106bf301feb"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.intel.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "VeluC9A7XDurAWQNgXKShS2SJSgoK79QHFgiAMYrvGo", "short-id": "7205d9079521832c"}
+  - {name: SS44-089, type: vless, server: 191.44.108.6, port: 443}
+    uuid: "558b26f6-061b-4079-9b84-ca13b3e90ae3"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "c9.qwyak.ru"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "A0QL_j-ReX7AotEj1w8qX9rHRgN2WycTZ43gUvuvZ00", "short-id": "3cf8d11aa0415d29"}
+  - {name: SS44-090, type: vless, server: 104.253.216.227, port: 443}
+    uuid: "106d20f6-d70a-40e2-b69b-8e82baf8d117"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.microsoft.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "FjcEZNQ8t5E4R04_11T6ghsOutdqwKKrelkuadakoQg", "short-id": "60500a63ad12"}
+  - {name: SS44-091, type: vless, server: 185.86.147.175, port: 443}
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    network: "ws"
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
+    client-fingerprint: "chrome"
+    ws-opts: {"path": "/service/telemetry/045d381f1166/", "headers": {"Host": "bhjolq0d0l.flowersgood.top"}}
+  - {name: SS44-092, type: vless, server: 85.155.179.206, port: 443}
+    uuid: "86a83d11-d751-4b60-aa4e-1dca5cff7028"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "us3.shtil.io"
+    client-fingerprint: "chrome"
+  - {name: SS44-093, type: ss, server: 15.204.247.244, port: 443}
+    cipher: "aes-256-gcm"
+    password: "pKEW8JPByTVTLtM"
+    udp: true
+  - {name: SS44-094, type: vless, server: 122.176.216.52, port: 443}
+    uuid: "16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88"
+    udp: true
+    network: "ws"
+    tls: true
+    servername: "app-6ada5023.deploy.meerasolution.com"
+    client-fingerprint: "chrome"
+    ws-opts: {"path": "/ws/16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88", "headers": {"Host": "app-6ada5023.deploy.meerasolution.com"}}
+  - {name: SS44-095, type: vless, server: 103.106.229.37, port: 21001}
+    uuid: "41b1c169-5905-4d98-b6a6-56896c25737c"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    reality-opts: {"public-key": "HZwHZBP3x4Yo4UQiHcypRJIU_UdZY5OAapQM8RUqVAU", "short-id": "ab39fc68ab3dee81"}
+  - {name: SS44-096, type: vless, server: 104.16.111.102, port: 443}
+    uuid: "4e4f1f70-5e56-4a76-bb9d-db087f4690c4"
+    udp: true
+    network: "ws"
+    tls: true
+    servername: "jp3.yohototo.top"
+    client-fingerprint: "unsafe"
+    ws-opts: {"path": "/tyxyws", "headers": {"Host": "jp3.yohototo.top"}}
+  - {name: SS44-097, type: vless, server: 82.118.19.153, port: 443}
+    uuid: "adcaa148-7c66-4282-a81a-99ec8afa029d"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "Tiuy8om5Lk0pWL95-8LaFFTwH0vbURVMoOkaW9xGaiE", "short-id": "670ed9f350bd8ee0"}
+  - {name: SS44-098, type: ss, server: 94.156.250.148, port: 7001}
+    cipher: "aes-256-gcm"
+    password: "RexnBgU7EV5ADxG"
+    udp: true
+  - {name: SS44-099, type: ss, server: 167.17.71.167, port: 19999}
+    cipher: "aes-256-gcm"
+    password: "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+    udp: true
+  - {name: SS44-100, type: vless, server: 85.90.197.220, port: 443}
+    uuid: "8f704ed6-9a1a-4d04-94dd-1bff501716de"
+    udp: true
+    network: "tcp"
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "chrome"
+    flow: "xtls-rprx-vision"
+    reality-opts: {"public-key": "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4", "short-id": "94acb54627612d43"}
+  - {name: SS44-101, type: ss, server: 193.29.139.147, port: 8080}
+    cipher: "chacha20-ietf-poly1305"
+    password: "k1dBOmOB4oqi7Ump37a1bQ"
+    udp: true
+  - {name: SS44-102, type: vless, server: 51.38.71.147, port: 443}
+    uuid: "fda89998-7e9a-4494-857a-cd0d00661b58"
+    udp: true
+    network: "ws"
+    tls: true
+    servername: "uk1.connectsuite.org"
+    client-fingerprint: "chrome"
+    ws-opts: {"path": "/cdn-cgi/ws", "headers": {"Host": "uk1.connectsuite.org"}}
+  - {name: SS44-103, type: vmess, server: 104.17.136.198, port: 443}
+    uuid: "0cf6d970-3f1d-4aae-a989-92a8f76ae3db"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    network: "ws"
+    tls: true
+    ws-opts: {"path": "/ws", "headers": {"Host": "vmess.lbw666.dpdns.org"}}
+  - {name: SS44-104, type: vless, server: 188.114.98.0, port: 443}
+    uuid: "4e4f1f70-5e56-4a76-bb9d-db087f4690c4"
+    udp: true
+    network: "ws"
+    tls: true
+    servername: "jp3.yohototo.top"
+    client-fingerprint: "unsafe"
+    ws-opts: {"path": "/tyxyws", "headers": {"Host": "jp3.yohototo.top"}}
