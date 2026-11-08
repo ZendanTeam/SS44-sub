@@ -1,1 +1,0 @@
-hysteria2://YV1sd3tfCZngTtnvRmy7@206.189.229.48:443/?insecure=1&obfs=salamander&obfs-password=ZuPf4OcXKvotJdDxlTus&sni=www.microsoft.com#SS44-U-001
