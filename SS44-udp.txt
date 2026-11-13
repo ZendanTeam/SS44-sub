@@ -1,1 +1,2 @@
 hysteria2://dongtaiwang.com@62.210.124.146:22000?insecure=1&sni=www.microsoft.com#SS44-U-001
+hy2://gf1%3Agfhysteria2024@66.94.121.46:443?insecure=1#SS44-U-002
