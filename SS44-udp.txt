@@ -1,2 +1,1 @@
 hy2://307ee0e53ea04dfd86a7f2f9fcd53844@s5.libertyrunet.store:443/?hop_interval=10&sni=s5.libertyrunet.store#SS44-U-001
-hy2://usqmqUKJFIlCmvkCNSY64L3k@8.209.247.109:443?insecure=1&sni=bing.com#SS44-U-002
