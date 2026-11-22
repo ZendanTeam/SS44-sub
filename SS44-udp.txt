@@ -1,0 +1,1 @@
+hysteria2://fce629d692a7b1ad71a17dae29d8b3c6@172.87.24.53:8443/?insecure=1&sni=hy2k2p.local#SS44-U-001
