@@ -1,1 +1,1 @@
-hy2://usqmqUKJFIlCmvkCNSY64L3k@8.209.247.109:443?insecure=1&sni=bing.com#SS44-U-001
+hy2://6ac6d17d-040c-4fab-940e-8f5d72c3fed6@135.126.21.107:443/?sni=de2-balance.rezproffx.ru#SS44-U-001
